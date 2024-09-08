@@ -1,0 +1,25 @@
+a {
+    color: rgb(170, 9, 9);
+    /* Ensures there's no text decoration interfering with the image */
+    text-decoration: none;
+    /* gradients only seem to work in this iteration so stick to em */
+    background-image: linear-gradient(rgb(170, 9, 9), rgb(170, 9, 9));
+    
+    /* Initial background length is 0 but height is 2px */
+    background-size: 0% 2px;
+
+    /* transition */
+    transition: background-size, 350ms;
+
+    /* ensures the background is at the botton with no repetition */
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+
+}
+
+a:hover {
+
+    /* changes the background under the given transformation figures */
+    background-size: 100% 2px;
+}
+/* Only works for words/sentences that span the entire element */
