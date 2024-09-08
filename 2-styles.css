@@ -1,0 +1,75 @@
+:root {
+    --inner-px-radius: 38px;
+    --margin-px: 2px;
+    --zero-px: 0px;
+}
+
+.toggle {
+    width: 120px;
+    height: 40px;
+}
+
+.toggle-cb {
+    display: none;
+    appearance: none;
+    position: relative;
+}
+
+.toggle-label {
+    position: relative;
+    display:block;
+    margin: 20px;
+    padding: 20px;
+    width: calc((var(--inner-px-radius) + var(--margin-px)) * 3);
+    height: 0px/* calc(var(--margin-px) + var(--margin-px) + var(--inner-px-radius)) */;
+
+}
+
+.toggle-label .toggle-inner {
+    position: absolute;
+    width: calc((var(--inner-px-radius) + var(--margin-px)) * 3);;
+    height: var(--inner-px-radius);
+    border: 2px solid #c2c2c2;
+    border-radius: var(--inner-px-radius);
+    margin: var(--margin-px) 0px;
+    color: white;
+
+    background-color: #eaeaea;
+    transition: background-color 800ms;
+}
+
+.toggle-label .toggle-inner:before {
+    display: block ;
+    color: #c2c2c2;
+    content: "No";
+    padding:0.5em 3em;
+}
+
+.toggle-label .toggle-switch {
+    position:relative;
+    background-color: white;
+    width: calc(var(--margin-px) + var(--margin-px) + var(--inner-px-radius));
+    height: calc(var(--margin-px) + var(--margin-px) + var(--inner-px-radius));
+    border: 2px solid #c2c2c2;
+    border-radius: 100%;
+    text-align:center;
+
+    margin-left: 0px;
+    transition: margin-left 200ms;
+}
+
+.toggle-cb:checked + .toggle-label .toggle-inner {
+    background-color: #f7003b;
+}
+
+.toggle-cb:checked + .toggle-label .toggle-switch {
+    margin-left: 80px;
+}
+
+.toggle-cb:checked + .toggle-label .toggle-inner::before {
+    color: white;
+    content: "Yes";
+    padding:0.5em 2.5em;
+    
+
+}
