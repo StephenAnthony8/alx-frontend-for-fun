@@ -13,7 +13,6 @@
     align-items: center;
     height: calc(var(--menu-button-radius) * 6);
     width: calc(var(--menu-button-radius));
-    /* border: var(--border-px-radius) solid #c81938; */
     margin: calc(var(--menu-button-radius) * 0.125);
     overflow: hidden;
     transition: height ease 200ms;
@@ -34,12 +33,8 @@
     display: none;
 }
 
-.menu:has(.menu-open:checked) {
-    height: calc(var(--menu-button-radius));
-    padding-top: 0;
-}
 
-/* big circle & content*/
+/* Menu & content*/
 .menu-open-button {
     position: absolute;
     top: 0;
@@ -49,6 +44,7 @@
     align-items: center;
 }
 
+/* Inside menu circle contents */
 .menu-line {
     width: 50%;
     height: 6%;
@@ -71,21 +67,6 @@
     display: none;
 }
 
-.menu-open:checked+.menu-open-button .menu-line {
-    display: initial;
-    transform:none;
-    margin: 4%;
-}
-
-/* checked */
-.menu-open:checked+.menu-open-button {
-
-    width: calc((var(--menu-button-radius) - var(--border-px-radius)));
-    height: calc((var(--menu-button-radius) - var(--border-px-radius)));
-    z-index: 10;
-    justify-self: center;
-}
-
 /* achor tags & content */
 .menu-item {
     display: flex;
@@ -98,6 +79,26 @@
     position: absolute;
 }
 
+/* checked values*/
+.menu:has(.menu-open:checked) {
+    height: calc(var(--menu-button-radius));
+    padding-top: 0;
+}
+
+.menu-open:checked+.menu-open-button .menu-line {
+    display: initial;
+    transform: none;
+    margin: 4%;
+}
+
+.menu-open:checked+.menu-open-button {
+
+    width: calc((var(--menu-button-radius) - var(--border-px-radius)));
+    height: calc((var(--menu-button-radius) - var(--border-px-radius)));
+    z-index: 10;
+    justify-self: center;
+}
+
 .menu-open:checked~.menu-item {
     background-color: white;
     border-color: white;
@@ -108,6 +109,3 @@
     color: #c81938;
     border-color: #c81938;
 }
-
-
-
